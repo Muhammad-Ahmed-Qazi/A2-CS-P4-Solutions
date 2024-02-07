@@ -1,8 +1,8 @@
 # 3a
 class TreasureChest:
-    # DECLARE question : STRING
-    # DECLARE answer : INTEGER
-    # DECLARE points: INTEGER
+    # PRIVATE question : STRING
+    # PRIVATE answer : INTEGER
+    # PRIVATE points: INTEGER
 
     def __init__(self, question, answer, points):
         self.__question  = question
@@ -39,9 +39,10 @@ def readData():
 
                 obj = TreasureChest(question, answer, points)
                 arrayTreasure.append(obj)
-    except:
+    except FileNotFoundError:
         print("File TreasureChestData.txt was not found!")
-
+    except:
+        print("Some other error!")
 
 # Main Program
 readData()
